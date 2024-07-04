@@ -14,7 +14,7 @@ export const enterUsername = async (page: Page, username: string) => {
 };
 
 export const enterPassword = async (page: Page, password: string) => {
-  await page.getByTestId("password1").fill(password);
+  await page.getByTestId("password").fill(password);
 };
 
 export const clickLoginButton = async (page: Page) => {

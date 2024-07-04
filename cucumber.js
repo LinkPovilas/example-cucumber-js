@@ -3,7 +3,7 @@ module.exports = {
     requireModule: ["ts-node/register"],
     require: ["features/**/*.ts"],
     paths: ["features/**/*.feature"],
-    retry: 1, // process.env.CI ? 3 : undefined,
+    retry: process.env.CI ? 3 : undefined,
     formatOptions: {
       snippetInterface: "async-await",
     },
