@@ -1,0 +1,31 @@
+name: Cucumber
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  cucumber:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.45.0-jammy
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: npm ci
+        run: npm ci
+
+      - name: run features
+        run: npm run test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: results/

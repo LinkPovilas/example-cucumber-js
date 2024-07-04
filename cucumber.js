@@ -1,0 +1,12 @@
+module.exports = {
+  default: {
+    requireModule: ["ts-node/register"],
+    require: ["features/**/*.ts"],
+    paths: ["features/**/*.feature"],
+    retry: 1, // process.env.CI ? 3 : undefined,
+    formatOptions: {
+      snippetInterface: "async-await",
+    },
+    format: ["@cucumber/pretty-formatter", "html:reports/cucumber-report.html"],
+  },
+};
