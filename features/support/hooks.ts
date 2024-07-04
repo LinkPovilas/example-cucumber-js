@@ -44,7 +44,7 @@ BeforeAll(async () => {
 
 Before(async function (this: CustomWorld, scenario: ITestCaseHookParameter) {
   this.startTime = new Date();
-  this.context = await browser.newContext();
+  this.context = await browser.newContext(config.browserContextOptions);
   this.page = await this.context.newPage();
   this.page.setDefaultTimeout(config.actionTimeout);
 
