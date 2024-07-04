@@ -73,8 +73,8 @@ After(async function (this: CustomWorld, scenario: ITestCaseHookParameter) {
     await Promise.resolve(this.attach(image, "image/png"));
   }
 
-  await this.page?.close();
-  await this.context?.close();
+  await this.page.close();
+  await this.context.close();
 });
 
 AfterAll(async () => {
