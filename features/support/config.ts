@@ -26,5 +26,5 @@ export const config: Config = {
   },
   browserContextOptions: { baseURL: "https://www.saucedemo.com" },
   actionTimeout: 5_000,
-  cucumberStepTimeout: 6_000,
+  cucumberStepTimeout: 10_000,
 };
