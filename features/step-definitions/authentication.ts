@@ -1,17 +1,14 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
-import {
-  goToLandingPage,
-  verifyUrl,
-} from "../../src/page-actions/browser/navigation";
+import { goToLandingPage, verifyUrl } from "../../src/page-actions/navigation";
 import {
   UserType,
   clickLoginButton,
   enterUsername,
   loginAs,
   verifyLoginError,
-} from "../../src/page-actions/application/authentication";
-import { pageUrl } from "../../src/data/application/page-url";
+} from "../../src/page-actions/authentication";
+import { pageUrl } from "../../src/data/page-url";
 
 Given("I navigate to the landing page", async function (this: CustomWorld) {
   await goToLandingPage(this.page);

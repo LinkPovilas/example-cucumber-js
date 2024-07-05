@@ -1,6 +1,6 @@
 import { expect, Page } from "@playwright/test";
-import { testUser } from "../../data/test/user";
-import { goToLandingPage } from "../browser/navigation";
+import { user } from "../data/user";
+import { goToLandingPage } from "./navigation";
 
 export type UserType = "standard_user" | "locked_out_user";
 
@@ -30,9 +30,9 @@ export const verifyLoginError = async (page: Page, message: string) => {
 const getUserByType = (userType: UserType) => {
   switch (userType) {
     case "standard_user":
-      return testUser.standardUser;
+      return user.standardUser;
     case "locked_out_user":
-      return testUser.lockedOutUser;
+      return user.lockedOutUser;
     default:
       throw new Error("Invalid user");
   }

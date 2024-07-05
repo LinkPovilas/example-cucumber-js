@@ -1,11 +1,11 @@
-import { User } from "../../page-actions/application/authentication";
+import { User } from "../page-actions/authentication";
 
 interface TestUser {
   standardUser: User;
   lockedOutUser: User;
 }
 
-export const testUser: TestUser = {
+export const user: TestUser = {
   standardUser: {
     username: "standard_user",
     password: "secret_sauce",
