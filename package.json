@@ -8,8 +8,8 @@
     "test:only": "cucumber-js --tags @only"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Povilas Linkevicius",
+  "license": "MIT",
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
     "@playwright/test": "^1.45.1",
