@@ -16,8 +16,8 @@ Given("I navigate to the landing page", async function (this: CustomWorld) {
 
 Given(
   "I enter the username {string}",
-  async function (this: CustomWorld, string) {
-    await enterUsername(this.page, string);
+  async function (this: CustomWorld, username: string) {
+    await enterUsername(this.page, username);
   }
 );
 
