@@ -1,6 +1,12 @@
 # example-cucumber-js
 
-CucumberJS + Playwright library
+CucumberJS + Playwright library + @pickle-jar/cli
+
+[@pickle-jar/cli](https://www.npmjs.com/package/@pickle-jar/cli) - experimental CLI tool made by me to run scenarios on multiple machines simultaneously.
+
+## Test report
+
+Allure Report: https://linkpovilas.github.io/example-cucumber-js/
 
 ## Running tests
 
