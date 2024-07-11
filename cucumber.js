@@ -7,6 +7,6 @@ module.exports = {
     formatOptions: {
       snippetInterface: "async-await",
     },
-    format: ["@cucumber/pretty-formatter", "html:reports/cucumber-report.html"],
+    format: ["@cucumber/pretty-formatter", "./allure-reporter.js"],
   },
 };
