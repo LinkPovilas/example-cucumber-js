@@ -23,5 +23,49 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run features
+      - name: Run scenarios
         run: npx @pickle-jar/cli test ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+
+      - name: Upload test results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ matrix.shardIndex }}
+          path: allure-results
+          retention-days: 1
+
+  test-report:
+    if: ${{ !cancelled() }}
+    needs: [cucumber]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Download test reports from GitHub Actions Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: allure-results
+          pattern: test-reports-*
+          merge-multiple: true
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: allure-results
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
