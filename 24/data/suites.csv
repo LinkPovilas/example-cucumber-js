@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jan 01 00:03:55 GMT 1970","Thu Jan 01 00:11:00 GMT 1970","425000","","","","","","Password is required",""
+"passed","Thu Jan 01 00:05:17 GMT 1970","Thu Jan 01 00:00:42 GMT 1970","-275000","","","","","","Standard user login",""
+"passed","Thu Jan 01 00:07:46 GMT 1970","Thu Jan 01 00:03:54 GMT 1970","-232000","","","","","","Username is required to log in",""
+"passed","Thu Jan 01 00:00:43 GMT 1970","Thu Jan 01 00:08:50 GMT 1970","487000","","","","","","Locked out user cannot login",""
